@@ -3,6 +3,7 @@ import { ChevronDown } from 'lucide-react'
 import "./globals.css";
 import React from 'react'
 import { Metadata } from 'next/types'
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -66,6 +67,7 @@ export default function RootLayout({
           </nav>
         </header>
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
