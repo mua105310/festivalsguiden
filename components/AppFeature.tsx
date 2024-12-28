@@ -16,16 +16,23 @@ export function AppFeature() {
             Mangler din camp lyd?
           </h2>
           <p className="text-gray-400 mb-6">
-              Download Moveboks appen, her kan du leje en SOUNDBOKS og få den leveret direkte til festivalen. De tilbyder også tyveriforsikring. og så har de fået <span className="text-green-500 font-bold">4.5/5 stjerner</span> på <span className="text-green-500 font-bold">4.5/5 stjerner</span> .
+              Download Moveboks appen, her kan du leje en SOUNDBOKS og få den leveret direkte til festivalen. De tilbyder også tyveriforsikring. og så har de fået <span className="text-green-500 font-bold">4.5/5 stjerner</span> på <span className="text-green-500 font-bold">Trustpilot</span> .
           </p>
           {/* Trustpilot Rating */}
           <div className="mb-6">
-            <div className="inline-flex items-center gap-1">
-              <Star className="w-5 h-5 text-green-500" />
-              <Star className="w-5 h-5 text-green-500" />
-              <Star className="w-5 h-5 text-green-500" />
-              <Star className="w-5 h-5 text-green-500" />
-              <Star className="w-5 h-5 text-green-300" /> {/* Half star */}
+            <div className="flex space-x-1">
+              <Star className="w-5 h-5 fill-green-500 text-green-500" />
+              <Star className="w-5 h-5 fill-green-500 text-green-500" />
+              <Star className="w-5 h-5 fill-green-500 text-green-500" />
+              <Star className="w-5 h-5 fill-green-500 text-green-500" />
+              <div className="relative w-5 h-5">
+                {/* Full star as the base */}
+                <Star className="absolute w-5 h-5 text-green-500" />
+                {/* Half-filled overlay */}
+                <div className="absolute top-0 left-0 h-full w-1/2 overflow-hidden">
+                  <Star className="w-5 h-5 fill-green-500 text-green-500" />
+                </div>
+              </div>
             </div>
             <p className="text-sm text-gray-400 mt-2">
               Trustpilot vurdering: <span className="text-green-500 font-bold">4.5/5</span>
