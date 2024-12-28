@@ -48,7 +48,7 @@ export default function RootLayout({
       <body>
         {/* Navigation */}
         <header className="fixed w-full z-50">
-          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
             <div className="flex justify-between h-20">
               <div className="flex items-center">
                 <Link href="/" className="text-xl font-bold tracking-tight text-white">

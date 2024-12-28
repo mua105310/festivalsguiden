@@ -15,14 +15,21 @@ export function FestivalsGuiden() {
         <div className="relative h-screen">
           <div className="absolute inset-0">
             <Image
-            src={roskilde}
-            alt="Roskilde Festival"
-            layout="fill"
+              src={roskilde}
+              alt="Roskilde Festival"
+              layout="fill"
+              objectFit="cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+            <div
+              className="absolute inset-0 bg-gradient-to-b"
+              style={{
+                background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1))',
+                zIndex: 5, // Ensures it appears above the image
+              }}
+            />
           </div>
           
-          <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+          <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center z-10">
             <div className="space-y-8">
               <h1 className="text-7xl font-bold leading-none tracking-tight max-w-4xl">
                 <span className="text-orange-500">Din Ultimative Guide</span>
