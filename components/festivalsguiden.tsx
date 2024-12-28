@@ -1,61 +1,22 @@
-import Link from 'next/link'
-import Head from 'next/head'
-import { CheckCircle2, ListChecks, Music, Tent, Package, Utensils, AmbulanceIcon as FirstAid, Sun, ChevronDown } from 'lucide-react'
-import { cn } from "@/lib/utils"
+'use client'
 
-export default function FestivalsGuiden() {
+import Link from 'next/link'
+import { CheckCircle2, ListChecks, Music, Tent, Package, Utensils, AmbulanceIcon as FirstAid, Sun } from 'lucide-react'
+import { cn } from "@/lib/utils"
+import Image from 'next/image'
+import roskilde from '@/assets/roskilde.jpeg'
+
+export function FestivalsGuiden() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Head>
-        <title>Festivalsguiden 2025 - Din Ultimative Pakkeliste</title>
-      </Head>
-      {/* Navigation */}
-      <header className="fixed w-full z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
-            <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold tracking-tight">
-                FESTIVALSGUIDEN <span className="text-orange-500">2025</span>
-              </Link>
-            </div>
-            <div className="flex items-center space-x-8">
-              <Link href="/festivaler" className="hover:text-orange-500 transition-colors text-sm uppercase tracking-wide">Festivaler</Link>
-              <div className="relative group">
-                <button className="hover:text-orange-500 transition-colors text-sm uppercase tracking-wide flex items-center gap-1">
-                  Blog
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-sm hidden group-hover:block">
-                  <Link 
-                    href="/blog/festival/roskilde-festival-guide" 
-                    className="block px-4 py-2 hover:bg-white/10 text-sm"
-                  >
-                    Roskilde Festival Guide
-                  </Link>
-                  <Link 
-                    href="/blog/festival/smukfest-guide" 
-                    className="block px-4 py-2 hover:bg-white/10 text-sm"
-                  >
-                    Smukfest Guide
-                  </Link>
-                </div>
-              </div>
-              <Link href="/fordele" className="hover:text-orange-500 transition-colors text-sm uppercase tracking-wide">Fordele</Link>
-              <Link href="/app" className="hover:text-orange-500 transition-colors text-sm uppercase tracking-wide">App</Link>
-              <Link href="/moveboks-hjemmeside" className="hover:text-orange-500 transition-colors text-sm uppercase tracking-wide">Moveboks</Link>
-            </div>
-          </div>
-        </nav>
-      </header>
-
       {/* Hero Section */}
       <main>
         <div className="relative h-screen">
           <div className="absolute inset-0">
-            <img 
-              src="/placeholder.svg?height=1080&width=1920" 
-              alt="Festival crowd" 
-              className="w-full h-full object-cover"
+            <Image
+            src={roskilde}
+            alt="Roskilde Festival"
+            layout="fill"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
           </div>
@@ -66,9 +27,11 @@ export default function FestivalsGuiden() {
                 <span className="text-orange-500">Din Ultimative Guide</span>
                 <span className="block mt-4">Til Festival Pakkelisten</span>
               </h1>
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105">
-                SE PAKKELISTEN
-              </button>
+              <a href='/blog'>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white mt-2 px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105">
+                  SE PAKKELISTEN
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -141,17 +104,6 @@ export default function FestivalsGuiden() {
                     </ul>
                   </div>
                 ))}
-              </div>
-
-              {/* Bottom Section */}
-              <div className="relative py-20">
-                <div className="text-center space-y-6">
-                  <h2 className="text-4xl font-bold tracking-tight uppercase">Derfor anbefaler vi Moveboks</h2>
-                  <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Med unik nærhed, forsikring og en brugervenlig app er Moveboks det oplagte valg til din næste festival. 
-                    Vi giver dem <span className="text-orange-500">5 ud af 5 stjerner!</span>
-                  </p>
-                </div>
               </div>
 
               {/* Interactive Checklist Button */}

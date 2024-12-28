@@ -1,15 +1,19 @@
 import { CheckCircle2, MapPin, Calendar, Clock, Users, TreesIcon as Tree } from 'lucide-react'
+import Image from 'next/image'
+import roskilde from '@/assets/roskilde.jpeg'
+import { AppFeature } from '@/components/AppFeature'
 
 export default function SmukfestGuide() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero */}
       <div className="relative h-[60vh]">
-        <img 
-          src="/placeholder.svg?height=1080&width=1920" 
-          alt="Smukfest" 
-          className="w-full h-full object-cover"
-        />
+      <Image
+            src={roskilde}
+            alt="Roskilde Festival"
+            layout="fill"
+            objectFit="cover"
+          />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,8 +28,8 @@ export default function SmukfestGuide() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {[
             { icon: <MapPin className="w-6 h-6" />, label: "Lokation", value: "Skanderborg" },
-            { icon: <Calendar className="w-6 h-6" />, label: "Dato", value: "31. juli - 4. august 2024" },
-            { icon: <Clock className="w-6 h-6" />, label: "Varighed", value: "5 dage" },
+            { icon: <Calendar className="w-6 h-6" />, label: "Dato", value: "3. august - 10. august 2025" },
+            { icon: <Clock className="w-6 h-6" />, label: "Varighed", value: "7 dage" },
             { icon: <Users className="w-6 h-6" />, label: "Deltagere", value: "60.000+" }
           ].map((item) => (
             <div key={item.label} className="bg-white/5 p-6">
@@ -37,6 +41,9 @@ export default function SmukfestGuide() {
             </div>
           ))}
         </div>
+
+                {/* App Feature */}
+                <AppFeature />
 
         {/* Pakkeliste */}
         <div className="space-y-12">

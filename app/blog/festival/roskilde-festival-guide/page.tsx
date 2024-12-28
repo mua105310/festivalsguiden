@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { CheckCircle2, MapPin, Calendar, Clock, Users, Timer, User, AppleIcon, SmartphoneIcon as AndroidIcon } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import Image from 'next/image'
+import roskilde from '@/assets/roskilde.jpeg'
+import moveboksapp from '@/assets/moveboksapp.png'
+import { AppFeature } from '@/components/AppFeature'
 
 interface PackingItem {
   id: string;
@@ -119,15 +123,16 @@ export default function RoskildeFestivalGuide() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0118] text-white pt-20">
+    <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero */}
       <div className="relative h-[60vh]">
-        <img 
-          src="/placeholder.svg?height=1080&width=1920" 
-          alt="Roskilde Festival" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0118]/60 via-[#0a0118]/40 to-[#0a0118]" />
+      <Image
+            src={roskilde}
+            alt="Roskilde Festival"
+            layout="fill"
+            objectFit="cover"
+          />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-6xl font-bold mb-4">Roskilde Festival Pakkeliste 2025</h1>
@@ -144,6 +149,8 @@ export default function RoskildeFestivalGuide() {
           </div>
         </div>
       </div>
+
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Festival Info */}
@@ -164,68 +171,18 @@ export default function RoskildeFestivalGuide() {
           ))}
         </div>
 
-        {/* Moveboks Recommendation */}
-        <div className="bg-white/5 p-8 rounded-lg mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 md:mr-6">
-              <h2 className="text-3xl font-bold mb-2">Derfor anbefaler vi Moveboks</h2>
-              <p className="text-lg mb-4">
-                Med unik nærhed, forsikring og en brugervenlig app er Moveboks det oplagte valg til din næste festival. 
-                Vi giver dem 5 ud af 5 stjerner!
-              </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full">
-                Lej en SOUNDBOKS
-              </Button>
-            </div>
-            <div className="w-full md:w-1/3">
-              <img 
-                src="/placeholder.svg?height=200&width=200" 
-                alt="Moveboks Rating" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-
         {/* App Download Section */}
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-8 rounded-lg mb-20">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 md:mr-6">
-              <h2 className="text-3xl font-bold mb-2">Download SOUNDBOKS Appen</h2>
-              <p className="text-lg mb-4">
-                Få mest muligt ud af din SOUNDBOKS med vores gratis app. 
-                Lej nemt en SOUNDBOKS via appen Moveboks og få den leveret direkte til festivalpladsen!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-full flex items-center justify-center">
-                  <AppleIcon className="w-6 h-6 mr-2" />
-                  App Store
-                </Button>
-                <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-full flex items-center justify-center">
-                  <AndroidIcon className="w-6 h-6 mr-2" />
-                  Google Play
-                </Button>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3">
-              <img 
-                src="/placeholder.svg?height=300&width=150" 
-                alt="SOUNDBOKS App" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
+            <AppFeature />
 
         {/* Pakkeliste */}
         <div className="space-y-12">
           <div className="flex justify-between items-center">
             <h2 className="text-4xl font-bold">Den Ultimative Pakkeliste</h2>
-            <Button 
+            {/* <Button 
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8"
             >
               Download PDF
-            </Button>
+            </Button> */}
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -239,7 +196,7 @@ export default function RoskildeFestivalGuide() {
                         id={item.id}
                         checked={item.checked}
                         onCheckedChange={() => handleCheckboxChange(categoryIndex, itemIndex)}
-                        className="mt-1"
+                        className="mt-1 bg-white"
                       />
                       <label
                         htmlFor={item.id}
@@ -297,15 +254,17 @@ export default function RoskildeFestivalGuide() {
 
           {/* CTA Section */}
           <div className="text-center space-y-6 py-12">
-            <h2 className="text-3xl font-bold">Mangler du udstyr til festivalen?</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Lej en SOUNDBOKS og andet festivaludstyr gennem Moveboks - vi leverer direkte til festivalpladsen!
+            <h2 className="text-3xl font-bold">En SOUNBOKS er vigtig</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto pb-2">
+              Vi anbefaler at du lejer gennem Moveboks, som har gode andmeldelser på trustpilot.
             </p>
+            <a href='https://moveboks.dk/'>
             <Button 
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg"
             >
-              Se Festival Udstyr
+              Læs mere
             </Button>
+            </a>
           </div>
         </div>
       </div>
