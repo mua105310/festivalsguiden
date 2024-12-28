@@ -5,6 +5,7 @@ import { CheckCircle2, ListChecks, Music, Tent, Package, Utensils, AmbulanceIcon
 import { cn } from "@/lib/utils"
 import Image from 'next/image'
 import roskilde from '@/assets/roskilde.jpeg'
+import { AppFeature } from './AppFeature'
 
 export function FestivalsGuiden() {
   return (
@@ -119,6 +120,8 @@ export function FestivalsGuiden() {
                   </div>
                 ))}
               </div>
+
+              <AppFeature />
 
               {/* Interactive Checklist Button */}
               <div className="flex justify-center">
