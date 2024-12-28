@@ -1,6 +1,41 @@
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import "./globals.css";
+import React from 'react'
+import { Metadata } from 'next/types'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Festivalsguiden 2025 | Din ultimative guide til festivaler',
+    template: '%s | Festivalsguiden 2025'
+  },
+  description: 'Festivalsguiden 2025 er din komplette ressource for festivalpakkelister, tips og guides til de bedste musikfestivaler i Danmark.',
+  keywords: ['festival', 'pakkeliste', 'musik', 'Roskilde', 'Smukfest', 'Danmark', '2025'],
+  authors: [{ name: 'Festivalsguiden Team' }],
+  creator: 'Festivalsguiden',
+  publisher: 'Festivalsguiden',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-icon.png',
+  },
+  viewport: 'width=device-width, initial-scale=1',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
 
 export default function RootLayout({
   children,

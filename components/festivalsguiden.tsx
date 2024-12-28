@@ -39,6 +39,20 @@ export function FestivalsGuiden() {
         <div className="bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="space-y-16">
+              {/* New Card: Festivalguiden Purpose */}
+              <div className="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-all duration-300">
+                <h2 className="text-2xl font-bold text-orange-500 uppercase tracking-wide mb-4">Hvad er Festivalguiden?</h2>
+                <div className="hidden md:block  text-gray-300 text-sm mt-10">
+                  <p>
+                    Festivalguiden er din ultimative festivalpartner. Vi hjælper dig med at planlægge og forberede alt, hvad du har brug for til din festivaloplevelse. 
+                    Uanset om du skal på Roskilde Festival, Smukfest, Northside eller en anden festival, har vi tips og pakkelister, så du ikke mangler noget.
+                    Vores guide dækker alt fra campingudstyr, personlig pleje og mad & drikke til festivalens must-haves som højttalere, powerbanks og meget mere. 
+                    Gør din festival til en succes med Festivalguiden!
+                  </p>
+                </div>
+
+              </div>
+
               {/* Category Buttons */}
               <div className="flex flex-wrap gap-4">
                 {['Basis udstyr', 'Camping gear', 'Mad & Drikke', 'Personlig pleje'].map((category, index) => (
@@ -108,6 +122,7 @@ export function FestivalsGuiden() {
 
               {/* Interactive Checklist Button */}
               <div className="flex justify-center">
+                <a href='/blog'>
                 <button 
                   className={cn(
                     "flex items-center gap-3 transition-all duration-300",
@@ -119,6 +134,7 @@ export function FestivalsGuiden() {
                   <ListChecks className="w-6 h-6" />
                   <span>Åbn interaktiv pakkeliste</span>
                 </button>
+                </a>
               </div>
             </div>
           </div>
@@ -127,4 +143,3 @@ export function FestivalsGuiden() {
     </div>
   )
 }
-
