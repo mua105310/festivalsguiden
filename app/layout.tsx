@@ -7,11 +7,11 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Festivalsguiden 2025 | Din ultimative guide til festivaler',
+    default: 'Festivalsguiden 2025 | Din ultimative guide til festivaler i Danmark',
     template: '%s | Festivalsguiden 2025'
   },
-  description: 'Festivalsguiden 2025 er din komplette ressource for festivalpakkelister, tips og guides til de bedste musikfestivaler i Danmark.',
-  keywords: ['festival', 'pakkeliste', 'musik', 'Roskilde', 'Smukfest', 'Danmark', '2025'],
+  description: 'Festivalsguiden 2025 er din komplette ressource for festivalpakkelister, tips og guides til de bedste musikfestivaler i Danmark. Find inspiration og praktiske råd til din næste festivaloplevelse.',
+  keywords: ['festival', 'pakkeliste', 'musik', 'Roskilde', 'Smukfest', 'Danmark', '2025', 'festivalguide', 'festivaltips'],
   authors: [{ name: 'Festivalsguiden Team' }],
   creator: 'Festivalsguiden',
   publisher: 'Festivalsguiden',
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="da">
       <body>
         {/* Navigation */}
         <header className="fixed w-full z-50">

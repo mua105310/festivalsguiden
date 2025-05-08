@@ -33,6 +33,15 @@ const blogPosts: BlogPost[] = [
     slug: "festival/smukfest-guide",
     category: "Festival Guide"
   },
+  {
+    title: "Roskilde Festival og Leje af Soundboks",
+    description: "Læs om, hvordan du lejer en soundboks til Roskilde Festival 2025, og få tips til den bedste festivaloplevelse.",
+    image: roskilde,
+    date: "December 20, 2024",
+    readTime: "3 min",
+    slug: "festival/roskilde-festival-soundboks",
+    category: "Festival Guide"
+  },
 ]
 
 export default function BlogPage() {
@@ -101,6 +110,17 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
+
+      <article className="border-b pb-4">
+        <h2 className="text-xl font-semibold">
+          <Link href="/blog/festival/roskilde-festival-soundboks" className="hover:text-orange-500">
+            Roskilde Festival og Leje af Soundboks
+          </Link>
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Læs om, hvordan du lejer en soundboks til Roskilde Festival 2025, og få tips til den bedste festivaloplevelse.
+        </p>
+      </article>
     </div>
   )
 }
